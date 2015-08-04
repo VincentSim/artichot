@@ -7,3 +7,38 @@
  * [TIPS] Look for cool form design on CodePen
  * ex: http://codepen.io/search?q=sign+up
  * ------------------------------------- */
+
+.form-create {
+  max-width: 400px;
+  margin: 20px auto 20px;
+  background-color: #fff;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 4px #dedede;
+  header{
+    padding: 10px 15px;
+    color: light-grey;
+    background: white;
+    border-bottom: 1px solid rgb(215,215,215);
+    h2 {
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+  }
+  section {
+    padding: 20px 15px;
+    label {
+      font-weight: normal;
+      color: rgb(200, 200, 200);
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+
+    .button {
+      margin-top: 15px;
+      padding: 0px 10px;
+      width: 100%;
+    }
+  }
+}

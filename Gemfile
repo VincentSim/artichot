@@ -43,4 +43,17 @@ gem 'simple_form'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+# development gems
+group :development, :test do
+  gem 'thin'
+  gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails', '~> 0.3.2'
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'factory_girl_rails', '~> 4.4.1'
+  gem "letter_opener"
+  gem 'quiet_assets'
+  gem 'byebug'
+end
 
