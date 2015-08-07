@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-
+ruby '2.1.2'
+# for heroku
+gem 'rails_12factor', group: :production
+gem 'puma',           group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
@@ -46,7 +49,6 @@ gem 'simple_form'
 # development gems
 group :development, :test do
   gem 'thin'
-  gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails', '~> 0.3.2'
