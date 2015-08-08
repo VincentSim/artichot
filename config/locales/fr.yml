@@ -11,3 +11,15 @@ fr:
       sign_out: "Déconnexion"
       sign_up: "Inscription"
       sign_in: "Connexion"
+
+  devise:
+    passwords:
+      new:
+        send_me_reset_password_instructions: "ré-initialiser mon mot de passe"
+  activerecord:
+    models:
+      user: "Utilisateur"
+    attributes:
+      user:
+        first_name: "Prénom"
+        last_name: "Nom"

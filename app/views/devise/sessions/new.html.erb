@@ -1,6 +1,6 @@
 <div class="form form-connect">
   <header>
-  <h2>Log in</h2>
+  <h2><%= t ('.sign_in') %></h2>
   </header>
   <section>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,7 +22,7 @@
       <% end -%>
 
       <div class="actions form-group">
-        <%= f.submit "Log in", class: "submit btn btn-success" %>
+        <%= f.submit t('.sign_in'), class: "submit btn btn-success" %>
       </div>
     <% end %>
 
