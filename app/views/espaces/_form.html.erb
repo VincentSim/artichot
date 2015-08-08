@@ -1,25 +1,31 @@
-<%= form_for(@espace) do |f| %>
-  <% if @espace.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@espace.errors.count, "error") %> prohibited this espace from being saved:</h2>
+<%= simple_form_for [@espace] do |f| %>
+          <%= f.error_notification %>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-quote-left"></i></span>
+            <%= f.input :name, label: false, placeholder: 'Give a sexy name to your pool' %>
+          </div>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+            <%= f.input :address, label: false, placeholder: 'Type your pool address'  %>
+            <%= f.input :street_number, as: :hidden, name: "pool[street_number]", input_html: { id: "street_number"} %>
+            <%= f.input :route, as: :hidden, name: "pool[route]", input_html: { id: "route"} %>
+            <%= f.input :locality, as: :hidden, name: "pool[locality]", input_html: { id: "locality"} %>
+            <%= f.input :country, as: :hidden, name: "pool[country]", input_html: { id: "country"} %>
+          </div>
+          <div class="form-group">
+            <%= f.label  :description %><br>
+            <%= f.input :description, label: false %>
+          </div>
+          <div class="form-group right ">
+            <%= f.label  :category %><br>
+            <% if I18n.locale.to_s == "fr"  %>
+              <%= f.select(:category, options_for_select(Espace::FR_CATEGORY, "architecture")) %>
+            <% else %>
+              <%= f.select(:category, options_for_select(Espace::EN_CATEGORY, "architecture")) %>
+            <% end %>
+          </div>
 
-      <ul>
-      <% @espace.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control" %>
-  </div>
-  <div class="actions">
-    <%= f.submit class: "submit submit btn btn-success"  %>
-  </div>
-<% end %>
+          <br>
+            <%= f.button :submit, class: 'btn-danger confirm-espace' %>
+        <% end %>

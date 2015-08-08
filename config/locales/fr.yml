@@ -23,3 +23,11 @@ fr:
       user:
         first_name: "Prénom"
         last_name: "Nom"
+    models:
+      espace: "Espace"
+    attributes:
+      espace:
+        name: "Nom"
+        description: "Description"
+        address: "Addresse"
+        category: "Categorie"

@@ -41,3 +41,11 @@ en:
       user:
         first_name: "First name"
         last_name: "Last name"
+    models:
+      espace: "Espace"
+    attributes:
+      espace:
+        name: "Name"
+        description: "Description"
+        address: "Address"
+        category: "Category"
