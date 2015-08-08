@@ -17,7 +17,7 @@
         <td><%= espace.description %></td>
         <td><%= espace.user %></td>
         <td><%= link_to 'Show', espace %></td>
-        <td><%= link_to 'Edit', edit_espace_path(espace) %></td>
+        <td><%= link_to (edit_espace_path(espace)) %></td>
         <td><%= link_to 'Destroy', espace, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

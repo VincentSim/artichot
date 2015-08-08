@@ -19,6 +19,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+# Rails message for free in :fr, :en, etc...
+gem 'rails-i18n', '~> 4.0.0'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

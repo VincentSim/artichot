@@ -1,0 +1,13 @@
+fr:
+  hello: "Hello world"
+  shared:
+    navbar:
+      search: "Rechercher un espace"
+      create_espace: "Créer son espace"
+      my_profile: "Mon profil"
+      my_espace: "Mon espace"
+      my_favorites: "Mes favoris"
+      settings: "Paramètres"
+      sign_out: "Déconnexion"
+      sign_up: "Inscription"
+      sign_in: "Connexion"

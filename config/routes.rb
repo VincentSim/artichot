@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
-  resources :espaces
+  scope '(:locale)', locale: /fr|en/ do
+    resources :espaces
+    devise_for :users
+    root 'espaces#index'
+  end
 
-  devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'espaces#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

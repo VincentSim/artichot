@@ -19,7 +19,7 @@
         <div class="visible-xs-block">
           <li>
             <%= link_to(espaces_path) do %>
-              <i class="fa fa-search"> Rechercher un espace </i>
+              <i class="fa fa-search"><%= t('.search')%></i>
             <% end %>
           </li>
           <% if user_signed_in? %>
@@ -30,18 +30,18 @@
             </li>
             <li>
               <%= link_to(destroy_user_session_path, method: 'delete') do %>
-                <i class="fa fa-sign-out"> déconnection </i>
+                <i class="fa fa-sign-out"><%= t('.sign_out')%></i>
               <% end %>
             </li>
           <% else %>
             <li >
               <%= link_to(new_user_registration_path) do %>
-                inscription
+                <%= t('.sign_up')%>
               <% end %>
             </li>
             <li >
               <%= link_to(new_user_session_path) do %>
-                connection
+                <%= t('.sign_in')%>
               <% end %>
             </li>
           <% end %>
@@ -57,7 +57,7 @@
           <li class="dropdown">
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
               <%= image_tag "http://lorempixel.com/30/30/people", class: "img-avatar" %>
-              Profile <span class="caret"></span>
+              <%= t('.my_profile')%> <span class="caret"></span>
             <% end %>
             <ul class="dropdown-menu" role="menu">
               <li>
@@ -65,7 +65,7 @@
               </li>
               <li>
                 <%= link_to(destroy_user_session_path, method: 'delete') do %>
-                  <i class="fa"> déconnection</i>
+                  <i class="fa"> <%= t('.sign_out')%></i>
                 <% end %>
               </li>
             </ul>
@@ -73,23 +73,23 @@
           <li>
             <% if current_user.espaces.size == 0 %>
               <%= link_to(new_espace_path, class: "btn") do %>
-                Créer son espace
+                <%= t('.Create_espace')%>
               <% end %>
             <% else %>
               <%= link_to(espace_path(current_user.espaces.first), class: "btn") do %>
-                Acceder à son espace
+                <%= t('.my_espace')%>
               <% end %>
             <% end %>
           </li>
           <% else %>
           <li class="hidden-xs">
             <%= link_to(new_user_registration_path) do %>
-              inscription
+              <%= t('.sign_up')%>
             <% end %>
           </li>
           <li class="hidden-xs">
             <%= link_to(new_user_session_path) do %>
-              connection
+              <%= t('.sign_in')%>
             <% end %>
           </li>
           <% end %>

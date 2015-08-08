@@ -21,3 +21,15 @@
 
 en:
   hello: "Hello world"
+
+  shared:
+    navbar:
+      search: "Search"
+      create_espace: "Create my espace"
+      my_profile: "My profile"
+      my_espace: "My espace"
+      my_favorites: "My favorites"
+      settings: "Settings"
+      sign_out: "Sign out"
+      sign_up: "Sign up"
+      sign_in: "Sign in"
