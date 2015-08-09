@@ -11,6 +11,13 @@ fr:
       sign_out: "Déconnexion"
       sign_up: "Inscription"
       sign_in: "Connexion"
+  pages:
+      home:
+        moto: "Des artistes à portée de main"
+        input: "Rentrez votre adresse"
+        search: "go"
+        how: "mode d'emploi"
+
 
   devise:
     passwords:

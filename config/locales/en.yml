@@ -33,6 +33,12 @@ en:
       sign_out: "Sign out"
       sign_up: "Sign up"
       sign_in: "Sign in"
+  pages:
+    home:
+      moto: "Artists are everywhere"
+      input: "Start typing your address..."
+      search: "go"
+      how: "See more"
 
   activerecord:
     models:

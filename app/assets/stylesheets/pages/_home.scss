@@ -5,3 +5,60 @@
  body{
   margin-top: 120px;
  }
+ #pages_home{
+  margin-top:0px;
+  .banner{
+    background-image:url(Atelierjpg.jpg);
+    background-size: cover;
+    height: 800px;
+    position: relative;
+    z-index: 0;
+  }
+  .content{
+    position:absolute;
+    z-index: 2;
+    margin-top:200px;
+    width: 100%;
+    text-align: center;
+    color:white;
+    text-shadow: 1px 1px 3px #443E32;
+
+    h1{
+      font-family: $header-font;
+      text-transform: uppercase;
+    }
+
+    h2{
+      font-size: 32px;
+      margin-top: 8px;
+    }
+
+    .input-home{
+      margin:auto;
+      width:400px;
+      input{
+        width: 80%;
+        margin:auto;
+      }
+    }
+    .see-more{
+      background: rgba(255,255,255,0.5);
+      border-style: none;
+      color: white;
+      margin-top: 40px;
+
+      &:hover{
+        transition: all 0.3s ease;
+        border-color: #565a5c;
+        border-bottom-color: #383b3c;
+        background-color: rgba(0,0,0,0.35);
+        color: #fff;
+      }
+    }
+    .how-it-works{
+      img{
+      width: 80%;
+    }
+    }
+  }
+ }
