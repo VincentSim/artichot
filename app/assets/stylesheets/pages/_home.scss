@@ -56,9 +56,13 @@
       }
     }
     .how-it-works{
-      img{
-      width: 80%;
-    }
+      margin-top: 25px;
+
+      .image-schema{
+        display: block;
+        margin: auto;
+        width: 50%;
+      }
     }
   }
  }
