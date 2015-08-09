@@ -10,6 +10,11 @@ class EspacesController < ApplicationController
   end
 
   def show
+     # Gmaps marker
+    @markers = Gmaps4rails.build_markers(@espace) do |espace, marker|
+      p marker.lat espace.latitude
+      p marker.lng espace.longitude
+    end
     respond_with(@espace)
   end
 
@@ -23,7 +28,6 @@ class EspacesController < ApplicationController
 
   def create
     @espace = current_user.espaces.create(espace_params)
-    binding.pry
     redirect_to espace_path(@espace)
   end
 
@@ -43,6 +47,6 @@ class EspacesController < ApplicationController
     end
 
     def espace_params
-      params.require(:espace).permit(:name, :description, :user_id)
+      params.require(:espace).permit(:name, :description, :address, :street_number, :route, :locality, :country)
     end
 end

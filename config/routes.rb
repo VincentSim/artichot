@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /fr|en/ do
     resources :espaces
     devise_for :users
-    root 'espaces#index'
+    root 'pages#home'
   end
 
 

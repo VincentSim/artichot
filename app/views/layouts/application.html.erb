@@ -6,12 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body id="<%= "#{params[:controller].gsub(/\//, '_')}_#{params[:action]}" %>">
 <%= render "shared/navbar" %>
 <%= yield %>
+<!-- Gmap and call JS -->
 
+
+<%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyB8_qEDhAC5C_aP2YJGZvKsGWSJrUUqHMI" %>
+  <%= javascript_include_tag "application" %>
+
+  <%= yield(:after_js) %>
 </body>
 </html>
