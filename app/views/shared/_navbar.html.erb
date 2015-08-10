@@ -49,20 +49,20 @@
       </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-          <li>
+          <!-- <li>
             <%= link_to "#" do %>
               <i class="fa fa-envelope-o"></i> Messages
             <% end %>
-          </li>
+          </li> -->
           <li class="dropdown">
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
               <%= image_tag "http://lorempixel.com/30/30/people", class: "img-avatar" %>
               <%= t('.my_profile')%> <span class="caret"></span>
             <% end %>
             <ul class="dropdown-menu" role="menu">
-              <li>
+              <!-- <li>
                 <%= link_to "link", "#" %>
-              </li>
+              </li> -->
               <li>
                 <%= link_to(destroy_user_session_path, method: 'delete') do %>
                   <i class="fa"> <%= t('.sign_out')%></i>

@@ -2,12 +2,12 @@
   <%= f.error_notification %>
   <div class="input-group">
     <span class="input-group-addon"><i class="fa fa-quote-left"></i></span>
-    <%= f.input :name, label: false, placeholder: 'Give a sexy name to your pool' %>
+    <%= f.input :name, label: false, placeholder: 'Name of your espace' %>
   </div>
   <br>
   <div class="input-group">
     <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-    <%= f.input :address, label: false, placeholder: 'Type your pool address'  %>
+    <%= f.input :address, label: false, placeholder: 'Type your espace address'  %>
     <%= f.input :street_number, as: :hidden, name: "espace[street_number]", input_html: { id: "street_number"} %>
     <%= f.input :route, as: :hidden, name: "espace[route]", input_html: { id: "route"} %>
     <%= f.input :locality, as: :hidden, name: "espace[locality]", input_html: { id: "locality"} %>

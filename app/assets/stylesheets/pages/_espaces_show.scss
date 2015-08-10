@@ -1,0 +1,23 @@
+#espaces_show{
+  margin-top: 60px;
+  .banner-img{
+    width: 100%;
+  }
+  .header{
+    background-color: white;
+    color:lightgray;
+    .first{
+      margin-top: 10px;
+      .img-avatar{
+        border: $navbar-profile-border-width solid $navbar-profile-border-color;
+        box-shadow: 0 0 2px rgb(200, 200, 200);
+        height: 100px;
+        margin-right: 10px;
+        border-radius: $navbar-profile-radius;
+      }
+      .header-content{
+        margin-top: 35px;
+      }
+    }
+  }
+}
