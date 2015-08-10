@@ -59,9 +59,12 @@
       margin-top: 25px;
 
       .image-schema{
-        display: block;
-        margin: auto;
-        width: 50%;
+        .img{
+          height: auto;
+          max-width: 630px;
+          margin: auto;
+          width: 100%;
+        }
       }
     }
   }
