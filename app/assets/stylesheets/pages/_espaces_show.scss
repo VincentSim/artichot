@@ -1,5 +1,5 @@
 #espaces_show{
-  margin-top: 60px;
+  margin-top: 0px;
   .banner-img{
     width: 100%;
   }
@@ -18,6 +18,15 @@
       .header-content{
         margin-top: 35px;
       }
+    }
+  }
+  .content{
+    span.fa{
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      z-index: 5;
+      display: inline-block;
     }
   }
 }

@@ -9,9 +9,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="<%= "#{params[:controller].gsub(/\//, '_')}_#{params[:action]}" %>">
-<%= render "shared/navbar" %>
-<%= yield %>
-<!-- Gmap and call JS -->
+  <% if notice %>
+    <div class="top-banner">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <% else %>
+  <% end %>
+  <%= render "shared/navbar" %>
+  <%= yield %>
+  <!-- Gmap and call JS -->
 
 
 <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
@@ -19,5 +25,12 @@
   <%= javascript_include_tag "application" %>
 
   <%= yield(:after_js) %>
+  <script type="text/javascript">
+  $( ".top-banner" ).hover(
+  function() {
+    $( this ).hide("slow");
+  }
+);
+  </script>
 </body>
 </html>

@@ -19,8 +19,16 @@ class EspacesController < ApplicationController
   end
 
   def new
-    @espace = Espace.new
-    respond_with(@espace)
+    if current_user.espaces
+      @espace = current_user.espaces.last
+      respond_to do |format|
+        format.html { redirect_to espace_path(@espace), notice: 'You have already an espace' }
+        format.js
+      end
+    else
+      @espace = Espace.new
+      respond_with(@espace)
+    end
   end
 
   def edit
@@ -28,7 +36,7 @@ class EspacesController < ApplicationController
 
   def create
     @espace = current_user.espaces.create(espace_params)
-    binding.pry
+
     redirect_to espace_path(@espace)
   end
 
