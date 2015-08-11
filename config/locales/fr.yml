@@ -17,6 +17,9 @@ fr:
         input: "Rentrez votre adresse"
         search: "go"
         how: "mode d'emploi"
+  espaces:
+    show:
+      get_directions: "Créer un itinéraire"
 
 
   devise:

@@ -39,6 +39,9 @@ en:
       input: "Start typing your address..."
       search: "go"
       how: "See more"
+  espaces:
+    show:
+      get_directions: "Get directions"
 
   activerecord:
     models:
