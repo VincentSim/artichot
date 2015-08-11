@@ -8,13 +8,21 @@
     <div class="row first">
       <div class="col-xs-12 col-md-2 col-md-offset-2">
         <%= image_tag "http://lorempixel.com/30/30/people", class: "img-avatar" %>
+        <p> User: <%= @espace.user.first_name %> - <%= @espace.category %> </p>
       </div>
-      <div class="col-xs-12 col-md-2 header-content">
-        Name: <%= @espace.name %>
+      <div class="col-xs-12 col-md-4 ">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Name: <%= @espace.name %></h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>Description:<%= @espace.description %></p>
+          </div>
+        </div>
       </div>
-      <div class="col-xs-12 col-md-2 header-content">
-        User: <%= @espace.user.first_name %> - <%= @espace.category %>
-      </div>
+
     </div>
   </div>
 </div>
@@ -62,8 +70,8 @@
         </a>
       </div>
     </div>
-    <div class="col-md-6  col-sm-6 col-xs-12">
-      Description:<%= @espace.description %>
+    <div class="col-md-6 col-sm-12">
+      <div id="map" style="width: 100%; height: 480px;"></div>
     </div>
   </div>
 </div>
