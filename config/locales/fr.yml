@@ -19,6 +19,14 @@ fr:
         moto: "Des artistes à portée de main"
         how: "mode d'emploi"
   espaces:
+    new:
+      new_espace: "Nouvel espace"
+    edit:
+      edit_my_espace: "Editer mon espace"
+      update: "Update!"
+      confirmation: "Confirmation"
+      AreYouSure: "Etes-vous sûr de vouloir supprimer cet espace ?"
+      destroy: "Supprimer cet espace"
     show:
       get_directions: "Créer un itinéraire"
       edit_my_espace: "Editer mon espace"

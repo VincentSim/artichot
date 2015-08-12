@@ -41,6 +41,14 @@ en:
       moto: "Artists are everywhere"
       how: "See more"
   espaces:
+    new:
+      new_espace: "New espace"
+    edit:
+      edit_my_espace: "Edit my espace"
+      update: "Update!"
+      confirmation: "Confirmation"
+      AreYouSure: "Are you sure that you want to delete this espace ?"
+      destroy: "Delete this espace"
     show:
       get_directions: "Get directions"
       edit_my_espace: "Edit my espace"
