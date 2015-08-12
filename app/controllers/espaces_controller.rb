@@ -6,12 +6,12 @@ class EspacesController < ApplicationController
 
   def index
     # params
-    @city = params[:user_input_autocomplete_address]
-    @nb_results = Espace.near(@city, 10).size
+    @address = params[:user_input_autocomplete_address]
+    @nb_results = Espace.near(@address, 10).size
     if @nb_results == 0
       @espaces = Espace.all
     else
-      @espaces = Espace.near(@city, 10)
+      @espaces = Espace.near(@address, 10)
     end
     p "=== debug ===="
     p @nb_results

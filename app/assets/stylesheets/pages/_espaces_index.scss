@@ -1,13 +1,31 @@
 #espaces_index{
-  h2{
-    margin: 0px;
-    font-size: 17px;
+  .search{
+    margin-top: 30px;
+    .input-home{
+        margin:auto;
+        width:400px;
+        input{
+          width: 80%;
+          margin:auto;
+        }
+      }
+    }
+  .result-message{
+    width: 400px;
+    margin:auto;
+    display: block;
+    text-align: center;
+    height: 40px;
   }
+  h2{
+      margin: 0px;
+      font-size: 17px;
+    }
+
   #city-display {
     font-size: 1em;
     display: inline-block;
     margin: auto;
-    margin-left: 32%;
     margin-bottom: -15px;
     vertical-align: middle;
   }

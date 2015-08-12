@@ -1,17 +1,21 @@
 <div class="container">
-  <div class="row">
-    <%= link_to "Back", :root, {class: "btn btn-primary", id: "btn-back"} %>
-    <% if @nb_results == 0 %>
-      <h1 id="city-display"><%= t('.no_results') %></h1>
-    <% else %>
-      <h1 id="city-display"><%= t('.results', city: @city) %> </h1>
-    <% end %>
+  <div class="row search">
+    <%= render "shared/search" %>
+  </div>
+  <div class="row text-center">
+    <div class="result-message">
+      <% if @nb_results == 0 %>
+        <h1 id="city-display"><%= t('.no_results') %></h1>
+      <% else %>
+        <h1 id="city-display"><%= t('.results', address: @address) %> </h1>
+      <% end %>
+    </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-lg-7" id="espaces-box">
         <% @espaces.each do |espace| %>
           <div class="col-xs-12 col-md-6 text-center" id="espace-<%= espace.id %>">
-            <%= link_to(espace_path(id: espace.id, checkin_on: @checkin_on, length: @length)) do %>
+            <%= link_to(espace_path(id: espace.id, address: @address)) do %>
               <div id="img-espace-index" style="/* background-image: url(ateliershow.png); */">
                 <h2 class="content-display"><%= espace.name %></h2>
                 <p class="content-display"><%= espace.address.truncate(35) %></p>
@@ -32,7 +36,35 @@
   </div>
 </div>
 
+
 <% content_for(:after_js) do %>
+<script type="text/javascript">
+  function initializeAutocomplete(id) {
+    var element = document.getElementById(id);
+    if (element) {
+      var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode'] });
+      console.log(element)
+      google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+    }
+  }
+  function onPlaceChanged() {
+    var place = this.getPlace();
+      console.log(place);  // Uncomment this line to view the full object returned by Google API.
+      for (var i in place.address_components) {
+        var component = place.address_components[i];
+        for (var j in component.types) {  // Some types are ["country", "political"]
+          var type_element = document.getElementById(component.types[j]);
+        if (type_element) {
+          type_element.value = component.long_name;
+        }
+      }
+    }
+  }
+  google.maps.event.addDomListener(window, 'load', function() {
+    console.log('doing something');
+    initializeAutocomplete('user_input_autocomplete_address');
+  });
+  </script>
   <%= javascript_tag do %>
     $(document).on('ready', function() {
       var mapOptions = {

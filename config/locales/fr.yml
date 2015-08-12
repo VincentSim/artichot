@@ -11,17 +11,18 @@ fr:
       sign_out: "Déconnexion"
       sign_up: "Inscription"
       sign_in: "Connexion"
+    search:
+      search: "go"
+      input: "Rentrez votre adresse"
   pages:
       home:
         moto: "Des artistes à portée de main"
-        input: "Rentrez votre adresse"
-        search: "go"
         how: "mode d'emploi"
   espaces:
     show:
       get_directions: "Créer un itinéraire"
     index:
-      results: "Résultats près  de %{city}"
+      results: "Résultats près  de %{address}"
       no_results: "Oups... il n'y a rien encore par ici"
 
 
