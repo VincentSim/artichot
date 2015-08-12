@@ -16,13 +16,13 @@
         <% @espaces.each do |espace| %>
           <div class="col-xs-12 col-md-6 text-center" id="espace-<%= espace.id %>">
             <%= link_to(espace_path(id: espace.id, address: @address)) do %>
-              <div id="img-espace-index" style="/* background-image: url(ateliershow.png); */">
+              <div id="img-espace-index" style="background-image: url(<%= image_path espace.picture.url(:medium) %>);">
                 <h2 class="content-display"><%= espace.name %></h2>
                 <p class="content-display"><%= espace.address.truncate(35) %></p>
                 <div id="espace-category">
                   <%= espace.category %>
                </div>
-                <%= image_tag "http://lorempixel.com/30/30/people", class: "img-circle", id:"img-user-index" %>
+                <%= image_tag espace.user.put_picture(:thumb), class: "img-circle", id:"img-user-index" %>
               </div>
             <% end %>
             <div id="title-card">

@@ -10,4 +10,19 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true
   validates :encrypted_password, presence: true
+
+  has_attached_file :picture,
+    styles: { medium: "300x300>", thumb: "100x100>" }
+
+  validates_attachment_content_type :picture,
+    content_type: /\Aimage\/.*\z/
+
+  def put_picture(size)
+    if self.picture.present?
+      self.picture(size)
+    else
+      "Artichautseul.jpg"
+    end
+  end
+
 end

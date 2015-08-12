@@ -1,7 +1,10 @@
 #espaces_show{
   margin-top: 0px;
+
   .banner-img{
-    width: 100%;
+     position: relative;
+    height: 402px;
+    background-size: cover;
   }
   .header{
     background-color: white;
@@ -18,6 +21,12 @@
 
     h1{
       font-size: 26px;
+    }
+
+    .edit_my_espace{
+      position: absolute;
+      left: 300px;
+      z-index: 3;
     }
     #category{
       background-color: rgba(136, 136, 136, 0.8);

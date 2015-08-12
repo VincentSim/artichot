@@ -1,5 +1,5 @@
 class Espace < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
@@ -15,5 +15,16 @@ class Espace < ActiveRecord::Base
  ["sculpture","sculpture"],
  ["verrerie", "glasswork"],
  ["vidéo", "video"]]
+
+  validates :name, presence: true
+  validates :user, presence: true
+
+ has_attached_file :picture,
+    styles: {
+      large: "1400x933>",
+      medium: "350x233>",
+      thumbnail: "70x40>"},
+      default_url: "ateliershow.png"
+  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
 end

@@ -21,6 +21,7 @@ fr:
   espaces:
     show:
       get_directions: "Créer un itinéraire"
+      edit_my_espace: "Editer mon espace"
     index:
       results: "Résultats près  de %{address}"
       no_results: "Oups... il n'y a rien encore par ici"

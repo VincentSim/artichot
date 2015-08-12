@@ -43,6 +43,7 @@ en:
   espaces:
     show:
       get_directions: "Get directions"
+      edit_my_espace: "Edit my espace"
     index:
       results: "Results near %{address}"
       no_results: "Oops... looks like there's nothing there..."

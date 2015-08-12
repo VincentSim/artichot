@@ -17,6 +17,10 @@
     <%= f.label  :description %><br>
     <%= f.input :description, label: false %>
   </div>
+  <div class="form-group">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </div>
   <div class="form-group right ">
     <%= f.label  :category %><br>
     <% if I18n.locale.to_s == "fr"  %>
@@ -27,7 +31,7 @@
   </div>
 
   <br>
-  <%= f.button :submit, class: 'btn-danger confirm-espace' %>
+  <%= f.button :submit, class: 'btn-danger' %>
 <% end %>
 <% content_for(:after_js) do %>
   <!-- Include Google Maps JS API -->
@@ -58,5 +62,12 @@
       console.log('doing something');
       initializeAutocomplete('espace_address');
     });
+    $('#espace_address').on('keyup keypress', function(e) {
+     var code = e.keyCode || e.which;
+    if (code == 13) {
+      e.preventDefault();
+    return false;
+    }
+  })
   </script>
 <% end %>

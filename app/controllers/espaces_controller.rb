@@ -34,7 +34,7 @@ class EspacesController < ApplicationController
   end
 
   def new
-    if current_user.espaces
+    if current_user.espaces.size != 0
       @espace = current_user.espaces.last
       respond_to do |format|
         format.html { redirect_to espace_path(@espace), notice: 'You have already an espace' }
@@ -50,6 +50,7 @@ class EspacesController < ApplicationController
   end
 
   def create
+    binding.pry
     @espace = current_user.espaces.create(espace_params)
 
     redirect_to espace_path(@espace)
@@ -71,6 +72,6 @@ class EspacesController < ApplicationController
     end
 
     def espace_params
-      params.require(:espace).permit(:name, :description, :address, :street_number, :route, :locality, :country, :category)
+      params.require(:espace).permit(:name, :description, :address, :street_number, :route, :locality, :country, :category, :picture)
     end
 end

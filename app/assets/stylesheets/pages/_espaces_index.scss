@@ -43,8 +43,7 @@
     border-top-left-radius:6px;
     border-top-right-radius:6px;
     width: 308px;
-    height: 205px;
-    background-image: url(ateliershow.png);
+    height: 180px;
     background-size: cover;
   }
 
@@ -69,12 +68,12 @@
     // text-align: left;
     // margin-left: 29px;
     position: absolute;
-    top: 218px;
+    top: 198px;
     left: 20px;
     color: #777777;
   }
   p.content-display {
-   top: 245px;
+   top: 222px;
   }
 
 
@@ -92,7 +91,7 @@
   #espace-category {
     position: absolute;
     left: 0px;
-    top: 149px;
+    top: 125px;
     font-size: 17px;
     color: white;
     background-color: rgba(136, 136, 136, 0.8);
@@ -104,7 +103,7 @@
   #img-user-index {
     position: absolute;
     left: 224px;
-    top: 167px;
+    top: 147px;
     width: 65px;
     border-color: white;
     border-width: 2px;

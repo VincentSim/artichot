@@ -1,13 +1,12 @@
 
-<div class="banner-cover">
-  <%= image_tag("ateliershow.png", class: "banner-img") %>
+<div class="banner-img" style="background-image: url(<%= image_path @espace.picture.url(:large) %>);">
 
 </div>
 <div class="header">
   <div class="container">
     <div class="row first">
       <div class="col-xs-12 col-md-2 col-md-offset-2 text-center">
-        <%= image_tag "http://lorempixel.com/30/30/people", class: "img-avatar" %>
+        <%= image_tag @espace.user.put_picture(:thumb), class: "img-avatar" %>
         <p><%= @espace.user.first_name %></p>
       </div>
       <div class="col-xs-12 col-md-6 ">
@@ -15,6 +14,11 @@
           <div class="col-xs-12">
             <h1><%= @espace.name %></h1>
             <p><%= @espace.address %></p>
+            <% if current_user == @espace.user %>
+              <%= link_to(edit_espace_path(@espace), class: 'edit_my_espace')   do %>
+                <%= t('.edit_my_espace') %>
+              <% end %>
+            <% end %>
           </div>
         </div>
         <div class="row">

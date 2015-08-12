@@ -1,6 +1,19 @@
-<h1>Editing espace</h1>
+<div class="form-create">
+  <header>
+    <h1>Edit my espace</h1>
+  </header>
+  <section>
+    <%= render 'form' %>
+  </section>
+  <div class= "text-center delete_espace_div">
+    <%= link_to espace_path(@espace), method: :delete,title: t(".confirmation"),  data: { confirm: t('.AreYouSure') } do %>
+      <div class="btn btn-danger delete_espace_font">
+        <%= t(".destroy") %>
+      </div>
+    <% end %>
+  </div>
 
-<%= render 'form' %>
+<%= link_to 'Show', @espace %>
+</div>
 
-<%= link_to 'Show', @espace %> |
-<%= link_to 'Back', espaces_path %>
+

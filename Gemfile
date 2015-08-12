@@ -52,6 +52,10 @@ gem "geocoder"
 gem "gmaps4rails"
 gem "rails-assets-underscore"
 
+# Paperclip
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
