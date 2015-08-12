@@ -1,29 +1,53 @@
-<h1>Listing espaces</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @espaces.each do |espace| %>
-      <tr>
-        <td><%= espace.name %></td>
-        <td><%= espace.description %></td>
-        <td><%= espace.user %></td>
-        <td><%= link_to 'Show', espace %></td>
-        <td><%= link_to (edit_espace_path(espace)) %></td>
-        <td><%= link_to 'Destroy', espace, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container">
+  <div class="row">
+    <%= link_to "Back", :root, {class: "btn btn-primary", id: "btn-back"} %>
+    <% if @nb_results == 0 %>
+      <h1 id="city-display"><%= t('.no_results') %></h1>
+    <% else %>
+      <h1 id="city-display"><%= t('.results', city: @city) %> </h1>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-7" id="espaces-box">
+        <% @espaces.each do |espace| %>
+          <div class="col-xs-12 col-md-6 text-center" id="espace-<%= espace.id %>">
+            <%= link_to(espace_path(id: espace.id, checkin_on: @checkin_on, length: @length)) do %>
+              <div id="img-espace-index" style="/* background-image: url(ateliershow.png); */">
+                <h2 class="content-display"><%= espace.name %></h2>
+                <p class="content-display"><%= espace.address.truncate(35) %></p>
+                <div id="espace-category">
+                  <%= espace.category %>
+               </div>
+                <%= image_tag "http://lorempixel.com/30/30/people", class: "img-circle", id:"img-user-index" %>
+              </div>
+            <% end %>
+            <div id="title-card">
+            </div>
+          </div>
+        <% end %>
+    </div>
+    <div class="col-xs-12 col-lg-5 hidden-xs hidden-sm visible-md-* visible-lg-*" id="map-container">
+      <div id="map" style="width: 100%; height: 500px;"></div>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Espace', new_espace_path %>
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      var mapOptions = {
+        disableDefaultUI: true
+      }
+       handler = Gmaps.build('Google');
+      handler.buildMap({
+        provider: { disableDefaultUI: true },
+        internal: { id: 'map' }
+        },
+        function(){
+          markers = handler.addMarkers(<%= raw @markers.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+    })
+  <% end %>
+<% end %>

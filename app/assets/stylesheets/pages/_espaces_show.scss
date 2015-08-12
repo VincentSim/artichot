@@ -5,7 +5,7 @@
   }
   .header{
     background-color: white;
-    color:lightgray;
+    color: #777777;
     .first{
       margin-top: 10px;
       .img-avatar{
@@ -20,7 +20,7 @@
       font-size: 26px;
     }
     #category{
-      background-color: lightgray;
+      background-color: rgba(136, 136, 136, 0.8);
       color: white;
       border-radius: 4px;
       width: 100px;
@@ -30,7 +30,7 @@
     }
   }
   .content{
-    color: #ADACAC;
+    color: #777777;
     span.fa{
       position: absolute;
       top: 50%;
@@ -48,11 +48,11 @@
       #description{
         text-transform: uppercase;
       }
-      .direction-cta{
-        margin: auto;
-        display: block;
-        margin-top: 30px;
-      }
+    }
+    .direction-cta{
+      margin: auto;
+      display: block;
+      margin-top: 30px;
     }
   }
 }

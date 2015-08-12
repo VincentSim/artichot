@@ -1,0 +1,100 @@
+#espaces_index{
+  h2{
+    margin: 0px;
+    font-size: 17px;
+  }
+  #city-display {
+    font-size: 1em;
+    display: inline-block;
+    margin: auto;
+    margin-left: 32%;
+    margin-bottom: -15px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 480px) {
+    #city-display {
+    margin-left: 25%;
+  }
+  }
+
+  #img-espace-index {
+    position: relative;
+    margin: auto;
+    margin-bottom: 0px;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    width: 308px;
+    height: 205px;
+    background-image: url(ateliershow.png);
+    background-size: cover;
+  }
+
+  #title-card {
+    background: white;
+    width: 308px;
+    height: 75px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin: auto;
+    margin-bottom: 23px;
+  }
+
+
+  #espaces-box {
+    padding-right: 3px;
+  }
+
+
+  .content-display {
+    // padding-top: 10px;
+    // text-align: left;
+    // margin-left: 29px;
+    position: absolute;
+    top: 218px;
+    left: 20px;
+    color: #777777;
+  }
+  p.content-display {
+   top: 245px;
+  }
+
+
+  #btn-back {
+    margin-top: 2em;
+    margin-bottom: 12px;
+    margin-left: 0.7em;
+    display: inline-block;
+  }
+
+  #espace-thumb-info-box {
+    // position: relative;
+  }
+
+  #espace-category {
+    position: absolute;
+    left: 0px;
+    top: 149px;
+    font-size: 17px;
+    color: white;
+    background-color: rgba(136, 136, 136, 0.8);
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 3px 10px;
+  }
+
+  #img-user-index {
+    position: absolute;
+    left: 224px;
+    top: 167px;
+    width: 65px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  #map-container {
+    border: 2px solid white;
+    box-shadow: 0 0 2px rgb(200, 200, 200);
+  }
+}

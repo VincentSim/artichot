@@ -5,8 +5,23 @@ class EspacesController < ApplicationController
   respond_to :html
 
   def index
-    @espaces = Espace.all
-    respond_with(@espaces)
+    # params
+    @city = params[:user_input_autocomplete_address]
+    @nb_results = Espace.near(@city, 10).size
+    if @nb_results == 0
+      @espaces = Espace.all
+    else
+      @espaces = Espace.near(@city, 10)
+    end
+    p "=== debug ===="
+    p @nb_results
+    p @espaces
+
+    # Gmaps markers
+    @markers = Gmaps4rails.build_markers(@espaces) do |espace, marker|
+      p marker.lat espace.latitude
+      p marker.lng espace.longitude
+    end
   end
 
   def show

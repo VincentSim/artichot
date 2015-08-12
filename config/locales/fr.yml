@@ -20,6 +20,9 @@ fr:
   espaces:
     show:
       get_directions: "Créer un itinéraire"
+    index:
+      results: "Résultats près  de %{city}"
+      no_results: "Oups... il n'y a rien encore par ici"
 
 
   devise:

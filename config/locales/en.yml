@@ -42,6 +42,9 @@ en:
   espaces:
     show:
       get_directions: "Get directions"
+    index:
+      results: "Results near %{city}"
+      no_results: "Oops... looks like there's nothing there..."
 
   activerecord:
     models:
