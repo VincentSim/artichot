@@ -1,6 +1,7 @@
 class Espace < ActiveRecord::Base
   belongs_to :user
-  has_many :art_pieces
+  has_many :art_pieces, dependent: :destroy
+  has_many :follows, dependent: :destroy
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
