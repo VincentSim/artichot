@@ -2,14 +2,14 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /fr|en/ do
     resources :espaces
     devise_for :users
-    resources :art_pieces, only: [:create, :destroy]
+    resources :art_pieces, only: [:create, :destroy, :show] do
+      resources :likes, only: [:create, :destroy]
+    end
     root 'pages#home'
     resources :espaces, only: [:show] do
       resources :follows, only: [:create, :destroy]
     end
-    resources :users, only: [:show] do
-      resources :likes, only: [:create, :destroy]
-    end
+    resources :users, only: [:show]
   end
 
 

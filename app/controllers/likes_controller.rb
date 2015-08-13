@@ -3,12 +3,12 @@ class LikesController < ApplicationController
   before_action :build_and_authorize_like, only: [ :create]
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @art_piece = ArtPiece.find(like_params[:art_piece_id])
     @like = @user.likes.new(user_id: @user.id, art_piece_id: @art_piece.id)
     if @like.save
       respond_to do |format|
-        format.html { redirect_to user_path(@user), notice: 'You liked this art piece' }
+        format.html { redirect_to art_piece_path(@art_piece), notice: 'You liked this art piece' }
         format.js
       end
     else
@@ -19,13 +19,12 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @user = User.find(@like.user)
+    @art_piece = ArtPiece.find(params[:art_piece_id])
     @like.destroy
     @like = Like.new
-    binding.pry
     respond_to do |format|
-      format.html { redirect_to user_path(@user), notice: 'You unliked this art piece' }
+      format.html { redirect_to art_piece_path(@art_piece), notice: 'You unliked this art piece' }
       format.js
     end
   end

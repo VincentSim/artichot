@@ -1,5 +1,5 @@
 <div id="create-like-div" >
-  <%= link_to user_likes_path(user, like: { :art_piece_id => art_piece.id }), method: :post, remote: :true do %>
+  <%= link_to art_piece_likes_path(art_piece, like: { :art_piece_id => art_piece.id }), method: :post, remote: :true do %>
    <i class="fa fa-heart"></i>
  <% end %>
 </div>

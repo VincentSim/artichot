@@ -1,7 +1,7 @@
 // Here you will write *javascript* that would be executed by the browser
 <% if @like.errors.any? %>
   // Render new review form with errors
-  $('#like-div').html("<%= j render 'likes/form', art_piece: @art_piece, like: @like %>");
+  $('#like-div').html("<%= j render 'likes/form', art_piece: @art_piece, like: @like, user:current_user %>");
   console.log('erreur')
 <% else %>
   console.log('pas derreur')
