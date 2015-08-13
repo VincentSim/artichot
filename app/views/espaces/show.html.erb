@@ -65,6 +65,13 @@
                   <div class="carousel-caption">
                     <%= art_piece.title %>
                   </div>
+                  <div class= "text-center delete_espace_div">
+                    <%= link_to art_piece_path(art_piece), method: :delete,title: t(".confirmation"),  data: { confirm: t('.AreYouSure') } do %>
+                      <div class="btn btn-danger delete_espace_font">
+                      <%= t(".destroy") %>
+                      </div>
+                    <% end %>
+                   </div>
                 </div>
             <% end %>
           </div>
@@ -83,31 +90,36 @@
     </div>
     <% end %>
   </div>
+
 <!-- form to add an art_piece -->
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-      <div class="card">
-        <% if @espace.user == current_user %>
-          <p><%= @message_to_user %></p>
-          <%= simple_form_for(@art_piece) do |f| %>
-            <%= f.hidden_field :espace_id, :value => @espace.id.to_i %>
-            <div class="form-group" id="input-show">
-              <%= f.label  :title %><br>
-              <%= f.input :title, label: false %>
-            </div>
-            <div class="form-group">
-              <%= f.label :picture %>
-              <%= f.file_field :picture %>
-            </div>
-            <%= f.submit "Confirm", :class => "btn btn-success"  %>
-          <% end %>
-        <% end %>
+  <% if @espace.user == current_user %>
+    <button class="btn btn-success btn-show" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <%= t ('.add_an_art_piece') %>
+    </button>
+    <div class="collapse" id="collapseExample">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+          <div class="card">
+              <%= simple_form_for(@art_piece) do |f| %>
+                <%= f.hidden_field :espace_id, :value => @espace.id.to_i %>
+                <div class="form-group" id="input-show">
+                  <%= f.label  :title %><br>
+                  <%= f.input :title, label: false %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :picture %>
+                  <%= f.file_field :picture %>
+                </div>
+                <%= f.submit "Confirm", :class => "btn btn-success"  %>
+              <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 
 
-  <button class="btn btn-success direction-cta"><%= t('.get_directions') %></button>
+  <button class="btn btn-success btn-show"><%= t('.get_directions') %></button>
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
       <div class="card">

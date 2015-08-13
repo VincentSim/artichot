@@ -68,11 +68,18 @@
           margin: auto;
         }
       }
+      .carousel-inner{
+        img{
+          margin:auto;
+        }
+      }
     }
-    .direction-cta{
+
+    .btn-show{
       margin: auto;
       display: block;
       margin-top: 30px;
     }
+
   }
 }

@@ -52,6 +52,10 @@ en:
     show:
       get_directions: "Get directions"
       edit_my_espace: "Edit my espace"
+      confirmation: "Confirmation"
+      AreYouSure: "Are you sure that you want to delete this art piece ?"
+      destroy: "Delete this art piece"
+      add_an_art_piece: "Add an Art Piece"
     index:
       results: "Results near %{address}"
       no_results: "Oops... looks like there's nothing there..."
@@ -71,3 +75,7 @@ en:
         description: "Description"
         address: "Address"
         category: "Category"
+        picture: "Picture"
+      art_piece:
+        title: "Title"
+        picture: "Picture"

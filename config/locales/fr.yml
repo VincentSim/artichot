@@ -30,6 +30,10 @@ fr:
     show:
       get_directions: "Créer un itinéraire"
       edit_my_espace: "Editer mon espace"
+      confirmation: "Confirmation"
+      AreYouSure: "Etes-vous sûr de vouloir supprimer cet oeuvre ?"
+      destroy: "Supprimer cet oeuvre"
+      add_an_art_piece: "Ajouter une oeuvre"
     index:
       results: "Résultats près  de %{address}"
       no_results: "Oups... il n'y a rien encore par ici"
@@ -54,3 +58,7 @@ fr:
         description: "Description"
         address: "Addresse"
         category: "Categorie"
+        picture: "Photo"
+      art_piece:
+        title: "Titre"
+        picture: "Photo"
