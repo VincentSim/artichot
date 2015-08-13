@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     devise_for :users
     resources :art_pieces, only: [:create, :destroy]
     root 'pages#home'
+    resources :espaces, only: [:show] do
+      resources :follows, only: [:create, :destroy]
+    end
   end
 
 

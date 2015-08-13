@@ -1,0 +1,5 @@
+<div id="create-follow-div" >
+  <%= link_to espace_follows_path(espace, follow: { :user_id => current_user.id }), method: :post, remote: :true do %>
+   <i class="fa fa-heart"></i>
+ <% end %>
+</div>

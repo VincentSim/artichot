@@ -1,5 +1,7 @@
 class EspacesController < ApplicationController
   before_action :set_espace, only: [:show, :edit, :update, :destroy]
+  before_action :find_and_authorize_espace, only: [:edit, :update, :destroy]
+  before_action :build_and_authorize_espace, only: [:new, :create]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   respond_to :html
@@ -26,6 +28,10 @@ class EspacesController < ApplicationController
 
   def show
     @art_piece = ArtPiece.new
+
+    if current_user
+      @follow = Follow.where(:espace_id => @espace.id, :user_id => current_user.id).first || Follow.new
+    end
      # Gmaps marker
     @markers = Gmaps4rails.build_markers(@espace) do |espace, marker|
       p marker.lat espace.latitude
@@ -74,5 +80,14 @@ class EspacesController < ApplicationController
 
     def espace_params
       params.require(:espace).permit(:name, :description, :address, :street_number, :route, :locality, :country, :category, :picture)
+    end
+    def find_and_authorize_espace
+      set_espace
+      authorize @espace
+    end
+
+    def build_and_authorize_espace
+      @espace = Espace.new
+      authorize @espace
     end
 end

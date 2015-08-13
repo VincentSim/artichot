@@ -1,0 +1,10 @@
+// Here you will write *javascript* that would be executed by the browser
+<% if @follow.errors.any? %>
+  // Render new review form with errors
+  $('#follow-div').html("<%= j render 'follows/form', espace: @espace, follow: @follow %>");
+  console.log('erreur')
+<% else %>
+  console.log('pas derreur')
+  $('#follow-div').html("<%= j render 'follows/delete', espace: @espace, follow: @follow, user: current_user %>");
+
+<% end %>

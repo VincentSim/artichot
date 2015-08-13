@@ -24,6 +24,15 @@
         <div class="row">
           <div class="col-xs-12">
             <p id="category"><%= @espace.category %></p>
+             <% if user_signed_in? %>
+              <div id="follow-div">
+                <% if @follow.persisted? %>
+                  <%= render 'follows/delete', espace: @espace, follow: @follow, user: current_user %>
+                <% else %>
+                  <%= render 'follows/form', espace: @espace, follow: @follow, user: current_user %>
+                <% end %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>

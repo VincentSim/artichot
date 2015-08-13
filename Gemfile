@@ -11,6 +11,8 @@ gem 'rails', '4.1.4'
 gem 'pg'
 # Authentification
 gem 'devise'
+# Authorize
+gem 'pundit'
 # Figaro
 gem 'figaro'
 # Use SCSS for stylesheets
