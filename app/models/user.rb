@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :espaces, dependent: :destroy
   has_many :follows, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true

@@ -1,5 +1,6 @@
 class ArtPiece < ActiveRecord::Base
   belongs_to :espace
+  has_many :likes, dependent: :destroy
   validates :espace, presence: true
 
   has_attached_file :picture,

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :espaces, only: [:show] do
       resources :follows, only: [:create, :destroy]
     end
+    resources :users, only: [:show] do
+      resources :likes, only: [:create, :destroy]
+    end
   end
 
 
