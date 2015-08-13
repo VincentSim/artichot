@@ -1,0 +1,5 @@
+<div id="delete-like-div" >
+  <%= link_to user_like_path(user, like), method: :delete, remote: :true do %>
+    <i class="fa fa-heart"></i>
+  <% end %>
+</div>

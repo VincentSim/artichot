@@ -4,8 +4,8 @@ class LikesController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @art_piece = ArtPiece.find(like_params[:espace_id])
-    @like = @user.likes.new(user_id: @user.id, espace_id: @espace.id)
+    @art_piece = ArtPiece.find(like_params[:art_piece_id])
+    @like = @user.likes.new(user_id: @user.id, art_piece_id: @art_piece.id)
     if @like.save
       respond_to do |format|
         format.html { redirect_to user_path(@user), notice: 'You liked this art piece' }
@@ -19,9 +19,11 @@ class LikesController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @user = User.find(@like.user)
     @like.destroy
     @like = Like.new
+    binding.pry
     respond_to do |format|
       format.html { redirect_to user_path(@user), notice: 'You unliked this art piece' }
       format.js
