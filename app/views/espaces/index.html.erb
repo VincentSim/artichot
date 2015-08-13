@@ -4,10 +4,11 @@
   </div>
   <div class="row text-center">
     <div class="result-message">
-      <% if @nb_results == 0 %>
+      <% if @address && @nb_results == 0 %>
         <h1 id="city-display"><%= t('.no_results') %></h1>
-      <% else %>
+      <% elsif @address %>
         <h1 id="city-display"><%= t('.results', address: @address) %> </h1>
+      <% else %>
       <% end %>
     </div>
   </div>

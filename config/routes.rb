@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /fr|en/ do
     resources :espaces
     devise_for :users
+    resources :art_pieces, only: [:create, :destroy]
     root 'pages#home'
   end
 

@@ -41,36 +41,32 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-      <div class="card">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          </ol>
+    <% if @espace.art_pieces.size != 0 %>
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="card">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <% for i in 1...@espace.art_pieces.size do %>
+                <li data-target="#carousel-example-generic" data-slide-to="<%= i %>"></li>
+              <% end %>
+            </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img src="http://lorempixel.com/640/480" />
-              <div class="carousel-caption">
-                hello world
-              </div>
-            </div>
-            <div class="item">
-              <img src="http://lorempixel.com/640/480" />
-              <div class="carousel-caption">
-                coucou
-              </div>
-            </div>
-            <div class="item">
-              <img src="http://lorempixel.com/640/480" />
-              <div class="carousel-caption">
-                coucou 2
-              </div>
-            </div>
+            <% @espace.art_pieces.each_with_index do |art_piece,i|%>
+              <% if i == 0 %>
+                <div id="<%= art_piece.id %>" class= "item active">
+              <% else %>
+                <div id="<%= art_piece.id%>" class= "item">
+              <% end %>
+                  <%= image_tag art_piece.picture.url(:medium) %>
+                  <div class="carousel-caption">
+                    <%= art_piece.title %>
+                  </div>
+                </div>
+            <% end %>
           </div>
 
           <!-- Controls -->
@@ -85,7 +81,32 @@
         </div>
       </div>
     </div>
+    <% end %>
   </div>
+<!-- form to add an art_piece -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <div class="card">
+        <% if @espace.user == current_user %>
+          <p><%= @message_to_user %></p>
+          <%= simple_form_for(@art_piece) do |f| %>
+            <%= f.hidden_field :espace_id, :value => @espace.id.to_i %>
+            <div class="form-group" id="input-show">
+              <%= f.label  :title %><br>
+              <%= f.input :title, label: false %>
+            </div>
+            <div class="form-group">
+              <%= f.label :picture %>
+              <%= f.file_field :picture %>
+            </div>
+            <%= f.submit "Confirm", :class => "btn btn-success"  %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
   <button class="btn btn-success direction-cta"><%= t('.get_directions') %></button>
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">

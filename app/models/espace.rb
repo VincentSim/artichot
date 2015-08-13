@@ -1,5 +1,6 @@
 class Espace < ActiveRecord::Base
   belongs_to :user
+  has_many :art_pieces
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 

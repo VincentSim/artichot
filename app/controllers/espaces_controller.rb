@@ -25,6 +25,7 @@ class EspacesController < ApplicationController
   end
 
   def show
+    @art_piece = ArtPiece.new
      # Gmaps marker
     @markers = Gmaps4rails.build_markers(@espace) do |espace, marker|
       p marker.lat espace.latitude

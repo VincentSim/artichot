@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812150448) do
+ActiveRecord::Schema.define(version: 20150813091227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "art_pieces", force: true do |t|
+    t.integer  "espace_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
+  add_index "art_pieces", ["espace_id"], name: "index_art_pieces_on_espace_id", using: :btree
 
   create_table "espaces", force: true do |t|
     t.string   "name"
