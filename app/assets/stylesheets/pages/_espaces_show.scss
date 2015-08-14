@@ -60,7 +60,7 @@
       background-color: rgba(136, 136, 136, 0.8);
       color: white;
       border-radius: 4px;
-      width: 100px;
+      padding: 0px 20px;
       text-align: center;
       float:left;
     }
@@ -138,6 +138,8 @@
       display: block;
       margin-top: 30px;
     }
-
+    a.btn-show{
+      display: table;
+    }
   }
 }

@@ -27,6 +27,7 @@ class EspacesController < ApplicationController
   end
 
   def show
+    @address = params[:address]
     @art_piece = ArtPiece.new
 
     if current_user

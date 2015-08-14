@@ -137,8 +137,11 @@
     </div>
   <% end %>
 
-
-  <button class="btn btn-success btn-show"><%= t('.get_directions') %></button>
+<div class="row">
+  <a class="btn btn-success btn-show" type="button" href="https://www.google.fr/maps/dir/<%=@address%>/<%=@espace.address%>/">
+  <%= t('.get_directions') %>
+  </a>
+</div>
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
       <div class="card">
