@@ -10,6 +10,12 @@ Rails.application.routes.draw do
       resources :follows, only: [:create, :destroy]
     end
     resources :users, only: [:show]
+    resources :profiles, only: [:show, :edit, :update] do
+      member do
+        get :edit_password
+        patch :update_password
+      end
+    end
   end
 
 

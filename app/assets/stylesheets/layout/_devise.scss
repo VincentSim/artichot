@@ -59,12 +59,21 @@
 .form#reset_password, .form#change_password{
   margin: 60px auto 60px;
 }
-.form#registration_edit{
-  margin: 60px auto 60px;
-  max-width:400px;
-    padding: 19px 45px 29px;
-
-    input{
-      width:310px;
+#devise_registrations_edit{
+    section{
+      .btn{
+      display: block;
+      margin: auto;
     }
+    .cancel_my_account{
+    border-top: 1px solid lightgray;
+    margin-top: 12px;
+    padding-top: 12px;
+
+    h3{
+      margin-top: 11px;
+    }
+
+  }
+}
 }

@@ -41,6 +41,23 @@ $navbar-profile-border-width: 2px;
  * ------------------------------------- */
 .navbar{
   margin-bottom: 0px;
+  .navbar-header{
+    position: relative;
+    .search-nav{
+      position: absolute;
+      left: 150%;
+      top: 17px;
+      font-family: "Open Sans", "Helvetica", "sans-serif";
+      .input-home{
+        margin:auto;
+        width:400px;
+        input{
+          width: 80%;
+          margin:auto;
+        }
+      }
+    }
+  }
 }
 .navbar-wagon {
   background: $navbar-bg;
@@ -119,6 +136,18 @@ $navbar-profile-border-width: 2px;
   .navbar-nav > li > .dropdown-menu{
     border-radius: 0;
     margin-top: 10px;
+  }
+  .dropdown-menu > li > a{
+    color: $navbar-color;
+    font-family: $navbar-font-family;
+    font-size: $navbar-font-size;
+    text-transform: $navbar-text-transform;
+    font-weight: $navbar-font-weight;
+    letter-spacing: $navbar-letter-spacing;
+  }
+  .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    color: $navbar-hover-color;
+    background-color: transparent;
   }
 
   .navbar-nav > li > .dropdown-menu:before{

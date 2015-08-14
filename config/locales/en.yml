@@ -36,6 +36,9 @@ en:
     search:
       search: "go"
       input: "Start typing your address..."
+    search_nav:
+      search: "go"
+      input: "Start typing your address..."
   pages:
     home:
       moto: "Artists are everywhere"
@@ -64,7 +67,12 @@ en:
       unfollow: "unfollow"
     form:
       follow: "follow"
-
+  devise:
+    registrations:
+      edit:
+        settings: "Settings"
+        first_name: "First name"
+        last_name: "Last name"
   activerecord:
     models:
       user: "User"

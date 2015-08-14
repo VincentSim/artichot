@@ -48,6 +48,11 @@ fr:
     passwords:
       new:
         send_me_reset_password_instructions: "ré-initialiser mon mot de passe"
+    registrations:
+      edit:
+        settings: "Paramètres"
+        first_name: "Prénom"
+        last_name: "Nom"
   activerecord:
     models:
       user: "Utilisateur"
