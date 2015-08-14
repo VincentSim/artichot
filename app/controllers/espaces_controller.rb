@@ -58,7 +58,6 @@ class EspacesController < ApplicationController
   end
 
   def create
-    binding.pry
     @espace = current_user.espaces.create(espace_params)
 
     redirect_to espace_path(@espace)
