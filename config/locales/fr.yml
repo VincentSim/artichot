@@ -37,6 +37,11 @@ fr:
     index:
       results: "Résultats près  de %{address}"
       no_results: "Oups... il n'y a rien encore par ici"
+  follows:
+    delete:
+      unfollow: "ne plus suivre"
+    form:
+      follow: "suivre"
 
 
   devise:

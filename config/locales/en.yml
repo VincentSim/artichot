@@ -59,6 +59,11 @@ en:
     index:
       results: "Results near %{address}"
       no_results: "Oops... looks like there's nothing there..."
+  follows:
+    delete:
+      unfollow: "unfollow"
+    form:
+      follow: "follow"
 
   activerecord:
     models:

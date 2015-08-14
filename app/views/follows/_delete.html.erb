@@ -1,5 +1,5 @@
 <div id="delete-follow-div" >
   <%= link_to espace_follow_path(espace, follow), method: :delete, remote: :true do %>
-    <i class="fa fa-heart"></i>
+    <%= t ('.unfollow')%>
   <% end %>
 </div>
