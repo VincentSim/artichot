@@ -5,17 +5,15 @@ Rails.application.routes.draw do
     resources :art_pieces, only: [:create, :destroy, :show] do
       resources :likes, only: [:create, :destroy]
     end
+    authenticated :user do
+      root :to => "profiles#show", :as => "authenticated_root"
+    end
     root 'pages#home'
     resources :espaces, only: [:show] do
       resources :follows, only: [:create, :destroy]
     end
     resources :users, only: [:show]
-    resources :profiles, only: [:show, :edit, :update] do
-      member do
-        get :edit_password
-        patch :update_password
-      end
-    end
+    resources :profiles, only: [:show]
   end
 
 

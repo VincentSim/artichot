@@ -67,6 +67,12 @@ en:
       unfollow: "unfollow"
     form:
       follow: "follow"
+  profiles:
+    show:
+      you_follow: "News Feed"
+      you_like: "Likes"
+      no_follow: "You need to follow an espace to have a News Feed..."
+      no_likes: "You have to like an art piece..."
   devise:
     registrations:
       edit:

@@ -42,6 +42,12 @@ fr:
       unfollow: "ne plus suivre"
     form:
       follow: "suivre"
+  profiles:
+    show:
+      you_follow: "Fil d'actualité"
+      you_like: "Likes"
+      no_follow: "Vous devez suivre un espace pour avoir un fil d'actualité..."
+      no_likes: "Vous n'avez pas encore liké d'oeuvre..."
 
 
   devise:

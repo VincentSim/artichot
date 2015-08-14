@@ -1,7 +1,7 @@
 class ArtPiecesController < ApplicationController
   before_action :set_art_piece, only: [:destroy]
-  before_action :find_and_authorize_comment, only: [:destroy]
-  before_action :build_and_authorize_comment, only: [ :create]
+  before_action :find_and_authorize_art_piece, only: [:destroy]
+  before_action :build_and_authorize_art_piece, only: [ :create]
 
   def create
     @espace = Espace.find(art_piece_params[:espace_id])

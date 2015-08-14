@@ -1,41 +1,18 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :edit_password, :update_password, :favorites, :my_presentations]
-  before_action :find_and_authorize_presentation, only: [:edit, :update, :edit_password, :update_password, :favorites, :my_presentations]
 
   def show
-    @user = current_user
-    if @user == current_user
-      @presentations = @user.presentations.order("created_at DESC").page(params[:page]).per(10)
+    if current_user.id == params[:id].to_i
+      @likes = current_user.likes.order("created_at DESC")
+      @follows = current_user.follows
+      @news = []
+      @follows.each do |follow|
+        follow.espace.art_pieces.each do |art_piece|
+          @news << art_piece
+        end
+      end
+      @sort_news = @news.sort_by{|art_piece| art_piece.created_at}.reverse
     else
-      presentations = @user.presentations.order("created_at DESC").reject{|s|s.private == "private" }
-      @presentations = Kaminari.paginate_array(presentations).page(params[:page]).per(10)
-    end
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @user.update(user_params)
-      redirect_to profile_path(@user)
-    else
-      render "edit"
-    end
-  end
-
-  def edit_password
-  end
-
-  def update_password
-    if @user.update_with_password(user_password_params)
-      sign_in @user, :bypass => true
-      redirect_to edit_profile_path(@user)
-    else
-      render "edit_password"
+      redirect_to profile_path(id:current_user.id)
     end
   end
 
@@ -54,23 +31,5 @@ class ProfilesController < ApplicationController
       format.html
       format.js
     end
-  end
-
-  private
-  def set_user
-    @user = User.find(params[:id])
-  end
-
-  def user_params
-    params.require(:user).permit(:user_name, :contact_email, :picture, :description)
-  end
-
-  def user_password_params
-    params.required(:user).permit(:password, :password_confirmation, :current_password)
-  end
-
-  def find_and_authorize_presentation
-    set_user
-    authorize @user
   end
 end
