@@ -9,7 +9,9 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="">
-          <%= image_tag "Artichautseul.jpg" %>
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag "Artichautseul.jpg" %>
+          <% end %>
         </a>
         <% if user_signed_in? %>
           <div class="search-nav">
