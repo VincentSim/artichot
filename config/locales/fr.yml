@@ -59,6 +59,9 @@ fr:
         settings: "Paramètres"
         first_name: "Prénom"
         last_name: "Nom"
+        select_profile_pic: "Choisissez votre photo de profil"
+      new:
+        select_profile_pic: "Choisissez votre photo de profil"
   activerecord:
     models:
       user: "Utilisateur"

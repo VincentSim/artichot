@@ -74,13 +74,15 @@
                   <div class="carousel-caption">
                     <%= art_piece.title %>
                   </div>
-                  <div class= "text-center delete_espace_div">
-                    <%= link_to art_piece_path(art_piece), method: :delete,title: t(".confirmation"),  data: { confirm: t('.AreYouSure') } do %>
-                      <div class="btn btn-danger delete_espace_font">
-                      <%= t(".destroy") %>
-                      </div>
-                    <% end %>
-                   </div>
+                  <% if current_user == @espace.user %>
+                    <div class= "text-center delete_espace_div">
+                      <%= link_to art_piece_path(art_piece), method: :delete,title: t(".confirmation"),  data: { confirm: t('.AreYouSure') } do %>
+                        <div class="btn btn-danger delete_espace_font">
+                        <%= t(".destroy") %>
+                        </div>
+                      <% end %>
+                     </div>
+                  <% end %>
                    <% if current_user %>
                     <% @like = Like.where(:art_piece_id => art_piece.id, :user_id => current_user.id).first || Follow.new %>
                     <div id="like-div">

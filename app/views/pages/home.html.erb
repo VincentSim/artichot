@@ -12,3 +12,10 @@
     </div>
   </div>
 </div>
+<% content_for(:after_js) do %>
+  <script>
+    $('#see-more').on('click', function() {
+      $('.how-it-works').removeClass('hidden');
+    });
+  </script>
+<%end%>
