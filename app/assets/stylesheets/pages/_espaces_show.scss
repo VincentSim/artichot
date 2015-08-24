@@ -88,8 +88,12 @@
       -o-transition: all 0.5s ease;
 
 
-      #description{
+      .title-card{
         text-transform: uppercase;
+      }
+      .description{
+        word-wrap: break-word;
+        white-space: pre-line;
       }
       form{
         .btn{

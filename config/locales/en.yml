@@ -44,10 +44,12 @@ en:
       moto: "Artists are everywhere"
       how: "How it works?"
   espaces:
+    form:
+      select_espace_pic: "Select your Espace picture"
     new:
       new_espace: "New espace"
     edit:
-      edit_my_espace: "Edit my espace"
+      edit_my_espace: "Edit my Espace"
       update: "Update!"
       confirmation: "Confirmation"
       AreYouSure: "Are you sure that you want to delete this espace ?"

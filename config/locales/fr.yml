@@ -19,10 +19,12 @@ fr:
         moto: "Des artistes à portée de main"
         how: "mode d'emploi"
   espaces:
+    form:
+      select_espace_pic: "Choisissez la photo de votre espace"
     new:
       new_espace: "Nouvel espace"
     edit:
-      edit_my_espace: "Editer mon espace"
+      edit_my_espace: "Editer mon Espace"
       update: "Update!"
       confirmation: "Confirmation"
       AreYouSure: "Etes-vous sûr de vouloir supprimer cet espace ?"
