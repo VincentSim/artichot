@@ -54,6 +54,11 @@
           markers = handler.addMarkers(<%= raw @markers.to_json %>);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
+          <% if @nb_results == 1 %>
+          console.log('hello')
+          handler.getMap().setZoom(14)
+          <% end %>
+
         });
     })
   <% end %>

@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-xs-12">
           <h1><%= @espace.name %>
-            <% if user_signed_in? %>
+            <% if user_signed_in? && current_user != @espace.user %>
             <div id="follow-div">
               <% if @follow.persisted? %>
               <%= render 'follows/delete', espace: @espace, follow: @follow, user: current_user %>
@@ -83,7 +83,7 @@
                       <% end %>
                      </div>
                   <% end %>
-                   <% if current_user %>
+                   <% if current_user != @espace.user %>
                     <% @like = Like.where(:art_piece_id => art_piece.id, :user_id => current_user.id).first || Follow.new %>
                     <div id="like-div">
                       <% if @like.persisted? %>
