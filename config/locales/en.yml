@@ -25,9 +25,9 @@ en:
   shared:
     navbar:
       search: "Search"
-      create_espace: "Create my espace"
+      create_espace: "Create my Espace"
       my_profile: "My profile"
-      my_espace: "My espace"
+      my_espace: "My Espace"
       my_favorites: "My favorites"
       settings: "Settings"
       sign_out: "Sign out"
@@ -41,22 +41,22 @@ en:
       input: "Start typing your address..."
   pages:
     home:
-      moto: "Artists are everywhere"
+      moto: "Meet the Artists"
       how: "How it works?"
   espaces:
     form:
       select_espace_pic: "Select your Espace picture"
     new:
-      new_espace: "New espace"
+      new_espace: "New Espace"
     edit:
       edit_my_espace: "Edit my Espace"
       update: "Update!"
       confirmation: "Confirmation"
-      AreYouSure: "Are you sure that you want to delete this espace ?"
-      destroy: "Delete this espace"
+      AreYouSure: "Are you sure that you want to delete this Espace ?"
+      destroy: "Delete this Espace"
     show:
       get_directions: "Get directions"
-      edit_my_espace: "Edit my espace"
+      edit_my_espace: "Edit my Espace"
       confirmation: "Confirmation"
       AreYouSure: "Are you sure that you want to delete this art piece ?"
       destroy: "Delete this art piece"
@@ -73,7 +73,7 @@ en:
     show:
       you_follow: "News Feed"
       you_like: "Likes"
-      no_follow: "You need to follow an espace to have a News Feed..."
+      no_follow: "You need to follow an Espace to have a News Feed..."
       no_likes: "You have to like an art piece..."
   devise:
     registrations:

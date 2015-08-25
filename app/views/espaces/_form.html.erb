@@ -24,9 +24,17 @@
   <div class="form-group right ">
     <%= f.label  :category %><br>
     <% if I18n.locale.to_s == "fr"  %>
-    <%= f.select(:category, options_for_select(Espace::FR_CATEGORY, "architecture")) %>
+      <% if @espace.category %>
+        <%= f.select(:category, options_for_select(Espace::FR_CATEGORY, @espace.category)) %>
+      <% else %>
+        <%= f.select(:category, options_for_select(Espace::FR_CATEGORY, "architecture")) %>
+      <% end %>
     <% else %>
-    <%= f.select(:category, options_for_select(Espace::EN_CATEGORY, "architecture")) %>
+      <% if @espace.category %>
+        <%= f.select(:category, options_for_select(Espace::EN_CATEGORY, @espace.category)) %>
+      <% else %>
+        <%= f.select(:category, options_for_select(Espace::EN_CATEGORY, "architecture")) %>
+      <% end %>
     <% end %>
   </div>
 

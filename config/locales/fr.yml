@@ -2,10 +2,10 @@ fr:
   hello: "Hello world"
   shared:
     navbar:
-      search: "Rechercher un espace"
-      create_espace: "Créer son espace"
+      search: "Rechercher un Espace"
+      create_espace: "Créer son Espace"
       my_profile: "Mon profil"
-      my_espace: "Mon espace"
+      my_espace: "Mon Espace"
       my_favorites: "Mes favoris"
       settings: "Paramètres"
       sign_out: "Déconnexion"
@@ -14,24 +14,27 @@ fr:
     search:
       search: "go"
       input: "Rentrez votre adresse"
+    search_nav:
+      search: "go"
+      input: "Rentrez votre adresse"
   pages:
       home:
         moto: "Des artistes à portée de main"
         how: "mode d'emploi"
   espaces:
     form:
-      select_espace_pic: "Choisissez la photo de votre espace"
+      select_espace_pic: "Choisissez la photo de votre Espace"
     new:
-      new_espace: "Nouvel espace"
+      new_espace: "Nouvel Espace"
     edit:
       edit_my_espace: "Editer mon Espace"
       update: "Update!"
       confirmation: "Confirmation"
-      AreYouSure: "Etes-vous sûr de vouloir supprimer cet espace ?"
-      destroy: "Supprimer cet espace"
+      AreYouSure: "Etes-vous sûr de vouloir supprimer cet Espace ?"
+      destroy: "Supprimer cet Espace"
     show:
       get_directions: "Créer un itinéraire"
-      edit_my_espace: "Editer mon espace"
+      edit_my_espace: "Editer mon Espace"
       confirmation: "Confirmation"
       AreYouSure: "Etes-vous sûr de vouloir supprimer cet oeuvre ?"
       destroy: "Supprimer cet oeuvre"
