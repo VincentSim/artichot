@@ -15,7 +15,11 @@
 <% content_for(:after_js) do %>
   <script>
     $('#see-more').on('click', function() {
+      if ($('.how-it-works').is(":visible")){
+        $('.how-it-works').addClass('hidden');
+      }else{
       $('.how-it-works').removeClass('hidden');
+    }
     });
   </script>
 <%end%>
