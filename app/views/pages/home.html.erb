@@ -12,6 +12,27 @@
     </div>
   </div>
 </div>
+<div class="suggestions">
+  <div class="row">
+    <div class="col-xs-12" id="espaces-box">
+        <% @espaces.each do |espace| %>
+          <div class="col-xs-12 col-md-4 text-center" id="espace-<%= espace.id %>">
+            <%= link_to(espace_path(id: espace.id, address: @address)) do %>
+              <div id="img-espace-index" style="background-image: url(<%= image_path espace.picture.url(:medium) %>);">
+                <h2 class="content-display"><%= espace.name %></h2>
+                <p class="content-display"><%= espace.address.truncate(35) %></p>
+                <div id="espace-category">
+                  <%= espace.category %>
+               </div>
+              </div>
+            <% end %>
+            <div id="title-card">
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
 <% content_for(:after_js) do %>
   <script>
     $('#see-more').on('click', function() {
