@@ -75,6 +75,7 @@ en:
       you_like: "Likes"
       no_follow: "You need to follow an Espace to have a News Feed..."
       no_likes: "You have to like an art piece..."
+      posted: "posted on"
   devise:
     registrations:
       edit:

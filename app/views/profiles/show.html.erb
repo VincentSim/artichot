@@ -17,10 +17,26 @@
                 <%= t ('.no_follow') %>
               </div>
             <% else %>
-              <% @sort_news.each do |art_piece| %>
+              <% @sort_news.each do |news| %>
               <div class="card">
-                <%= art_piece.title %> - <%= art_piece.created_at.strftime("%d/%m/%Y") %>
-                <%= image_tag(art_piece.picture(:medium)) %>
+                <div class="row title">
+                  <div class="col-xs-3 col-md-2">
+                    <%= image_tag news.espace.user.put_picture(:thumb), class: "img-avatar" %>
+                  </div>
+                  <div class="col-xs-9 col-md-10 posted">
+                    <%= link_to espace_path(news.espace) do %>
+                     <%= news.espace.user.first_name %>
+                     <%end%>
+                     <%= t ('.posted') %>
+                     <%= news.created_at.strftime("%d/%m/%Y") %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 text-center">
+                    <%= image_tag(news.picture(:medium)) %>
+                    <%= news.title %>
+                  </div>
+                </div>
               </div>
               <% end %>
             <% end %>
@@ -33,8 +49,24 @@
             <% else %>
               <% @likes.each do |like| %>
               <div class="card">
-                <%= like.art_piece.title %> - <%= like.art_piece.created_at.strftime("%d/%m/%Y") %>
-                <%= image_tag(like.art_piece.picture(:medium)) %>
+                <div class="row title">
+                  <div class="col-xs-3 col-md-2">
+                    <%= image_tag like.art_piece.espace.user.put_picture(:thumb), class: "img-avatar" %>
+                  </div>
+                  <div class="col-xs-9 col-md-10 posted">
+                    <%= link_to espace_path(like.art_piece.espace) do %>
+                     <%= like.art_piece.espace.user.first_name %>
+                     <%end%>
+                     <%= t ('.posted') %>
+                     <%= like.art_piece.created_at.strftime("%d/%m/%Y") %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 text-center">
+                    <%= image_tag(like.art_piece.picture(:medium)) %>
+                    <%= like.art_piece.title %>
+                  </div>
+                </div>
               </div>
               <%end%>
             <% end %>

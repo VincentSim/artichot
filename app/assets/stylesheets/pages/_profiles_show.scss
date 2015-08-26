@@ -36,6 +36,20 @@
         margin: auto;
         border: 1px solid lightgray;
       }
+      .img-avatar{
+        border: $navbar-profile-border-width solid $navbar-profile-border-color;
+        box-shadow: 0 0 2px rgb(200, 200, 200);
+        height: 45px;
+        border-radius: $navbar-profile-radius;
+      }
+      .posted{
+        margin-top: 12px;
+      }
+      .title{
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 9px;
+        margin-bottom: 9px;
+      }
     }
   }
 
