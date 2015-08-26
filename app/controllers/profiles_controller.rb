@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
           @news << art_piece
         end
       end
-      @sort_news = @news.sort_by{|art_piece| art_piece.created_at}.reverse
+      @sort_news = @news.sort_by{|news| news.updated_at}.reverse
     else
       redirect_to profile_path(id:current_user.id)
     end
