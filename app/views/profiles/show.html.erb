@@ -34,7 +34,9 @@
                 <div class="row">
                   <div class="col-xs-12 text-center">
                     <%= image_tag(news.picture(:medium)) %>
-                    <%= news.title %>
+                    <div class="title_art_piece">
+                      <%= news.title %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -64,7 +66,9 @@
                 <div class="row">
                   <div class="col-xs-12 text-center">
                     <%= image_tag(like.art_piece.picture(:medium)) %>
+                    <div class="title_art_piece">
                     <%= like.art_piece.title %>
+                    </div>
                   </div>
                 </div>
               </div>
