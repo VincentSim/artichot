@@ -83,16 +83,7 @@
                       <% end %>
                      </div>
                   <% end %>
-                   <% if user_signed_in? && current_user != @espace.user %>
-                    <% @like = Like.where(:art_piece_id => art_piece.id, :user_id => current_user.id).first || Follow.new %>
-                    <div id="like-div">
-                      <% if @like.persisted? %>
-                        <%= render 'likes/delete', art_piece: art_piece, like: @like, user: current_user %>
-                      <% else %>
-                        <%= render 'likes/form', art_piece: art_piece, like: @like, user: current_user %>
-                      <% end %>
-                    </div>
-                   <% end %>
+
                 </div>
             <% end %>
           </div>
@@ -122,6 +113,16 @@
             <div data-id="<%= art_piece.id %>" class= "explanations">
           <% else %>
             <div data-id="<%= art_piece.id%>" class= "hidden explanations">
+          <% end %>
+          <% if user_signed_in? && current_user != @espace.user %>
+            <% @like = Like.where(:art_piece_id => art_piece.id, :user_id => current_user.id).first || Like.new %>
+            <div id="like-div">
+              <% if @like.persisted? %>
+                <%= render 'likes/delete', art_piece: art_piece, like: @like, user: current_user %>
+              <% else %>
+                <%= render 'likes/form', art_piece: art_piece, like: @like, user: current_user %>
+              <% end %>
+            </div>
           <% end %>
             <p class="description"> <%= art_piece.description? ? art_piece.description : t('.no_description') %></p>
         </div>
