@@ -6,7 +6,7 @@ class ArtPiecePolicy < ApplicationPolicy
 
 
   def destroy?
-    @user  ==  @record.user
+    @user  ==  @record.espace.user
   end
 
 end

@@ -34,7 +34,7 @@ class ArtPiecesController < ApplicationController
     end
 
     def art_piece_params
-      params.require(:art_piece).permit(:title, :picture, :espace_id)
+      params.require(:art_piece).permit(:title, :picture, :espace_id, :description)
     end
 
     def find_and_authorize_art_piece

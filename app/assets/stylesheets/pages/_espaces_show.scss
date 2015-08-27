@@ -101,10 +101,21 @@
           margin: auto;
         }
       }
+       .carousel-indicators {
+          top: 10px;
+        }
+        .carousel-indicators li{
+          cursor: default;
+        }
       .carousel-inner{
         img{
           margin:auto;
         }
+        .carousel-caption{
+          top: 10px;
+          word-wrap: break-word;
+        }
+
         #like-div{
           width: 35px;
           margin: auto;

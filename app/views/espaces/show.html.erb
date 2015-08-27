@@ -53,12 +53,12 @@
     <% if @espace.art_pieces.size != 0 %>
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <div class="card">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li  data-slide-to="0" class="active"></li>
               <% for i in 1...@espace.art_pieces.size do %>
-                <li data-target="#carousel-example-generic" data-slide-to="<%= i %>"></li>
+                <li  data-slide-to="<%= i %>"></li>
               <% end %>
             </ol>
 
@@ -112,6 +112,24 @@
     <% end %>
   </div>
 
+
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <div class="card">
+      <% @espace.art_pieces.each_with_index do |art_piece,i|%>
+          <% if i == 0 %>
+            <div data-id="<%= art_piece.id %>" class= "explanations">
+          <% else %>
+            <div data-id="<%= art_piece.id%>" class= "hidden explanations">
+          <% end %>
+            <p class="description"> <%= art_piece.description? ? art_piece.description : t('.no_description') %></p>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
 <!-- form to add an art_piece -->
   <% if @espace.user == current_user %>
     <button class="btn btn-success btn-show" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -130,6 +148,10 @@
                 <div class="form-group">
                   <%= f.label :picture %>
                   <%= f.file_field :picture %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :description %>
+                  <%= f.input :description, label:false %>
                 </div>
                 <%= f.submit "Confirm", :class => "btn btn-success"  %>
               <% end %>
@@ -167,4 +189,36 @@
       });
     })
   <% end %>
+  <script type="text/javascript">
+  $('.right').on('click', function() {
+    if ($('.item.active').next().attr('id')){
+      var id = $('.item.active').attr('id');
+      var new_id = $('.item.active').next().attr('id');
+      $(".explanations[data-id="+id+"]").addClass('hidden');
+      $(".explanations[data-id="+new_id+"]").removeClass('hidden');
+      // $('div').attr('data-id', id).addClass('hidden');
+      // $('div').attr('data-id', new_id).addClass('hidden');
+    }else{
+      var id = $('.item.active').attr('id');
+      var new_id = $('.item').first().attr('id');
+      $(".explanations[data-id="+id+"]").addClass('hidden');
+      $(".explanations[data-id="+new_id+"]").removeClass('hidden');
+    }
+  });
+  $('.left').on('click', function() {
+    if ($('.item.active').prev().attr('id')){
+      var id = $('.item.active').attr('id');
+      var new_id = $('.item.active').prev().attr('id');
+      $(".explanations[data-id="+id+"]").addClass('hidden');
+      $(".explanations[data-id="+new_id+"]").removeClass('hidden');
+      // $('div').attr('data-id', id).addClass('hidden');
+      // $('div').attr('data-id', new_id).addClass('hidden');
+    }else{
+      var id = $('.item.active').attr('id');
+      var new_id = $('.item').last().attr('id');
+      $(".explanations[data-id="+id+"]").addClass('hidden');
+      $(".explanations[data-id="+new_id+"]").removeClass('hidden');
+    }
+  });
+  </script>
 <% end %>

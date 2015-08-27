@@ -39,6 +39,7 @@ fr:
       AreYouSure: "Etes-vous sûr de vouloir supprimer cet oeuvre ?"
       destroy: "Supprimer cet oeuvre"
       add_an_art_piece: "Ajouter une oeuvre"
+      no_description: "Aucune description"
     index:
       results: "Résultats près  de %{address}"
       no_results: "Oups... il n'y a rien encore par ici"
@@ -54,6 +55,7 @@ fr:
       no_follow: "Vous devez suivre un espace pour avoir un fil d'actualité..."
       no_likes: "Vous n'avez pas encore liké d'oeuvre..."
       posted: "a posté le"
+      like: "Vous avez aimé l'oeuvre %{title} postée le %{date} par"
 
 
   devise:

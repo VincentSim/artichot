@@ -56,11 +56,10 @@
                     <%= image_tag like.art_piece.espace.user.put_picture(:thumb), class: "img-avatar" %>
                   </div>
                   <div class="col-xs-9 col-md-10 posted">
+                    <%= t('.like', title: like.art_piece.title, date: like.art_piece.created_at.strftime("%d/%m/%Y")) %>
                     <%= link_to espace_path(like.art_piece.espace) do %>
                      <%= like.art_piece.espace.user.first_name %>
                      <%end%>
-                     <%= t ('.posted') %>
-                     <%= like.art_piece.created_at.strftime("%d/%m/%Y") %>
                   </div>
                 </div>
                 <div class="row">
