@@ -21,6 +21,7 @@ fr:
       home:
         moto: "Des artistes à portée de main"
         how: "mode d'emploi"
+        moto_suggestions: "Découvrez l'un de ces Artistes"
   espaces:
     form:
       select_espace_pic: "Choisissez la photo de votre Espace"

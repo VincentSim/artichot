@@ -43,6 +43,7 @@ en:
     home:
       moto: "Meet the Artists"
       how: "How it works?"
+      moto_suggestions: "Discover one of these Artists"
   espaces:
     form:
       select_espace_pic: "Select your Espace picture"
