@@ -12,28 +12,11 @@
       <% end %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-lg-7" id="espaces-box">
-        <% @espaces.each do |espace| %>
-          <div class="col-xs-12 col-md-6 text-center" id="espace-<%= espace.id %>">
-            <%= link_to(espace_path(id: espace.id, address: @address)) do %>
-              <div id="img-espace-index" style="background-image: url(<%= image_path espace.picture.url(:medium) %>);">
-                <h2 class="content-display"><%= espace.name %></h2>
-                <p class="content-display"><%= espace.address.truncate(35) %></p>
-                <div id="espace-category">
-                  <%= espace.category %>
-               </div>
-                <%= image_tag espace.user.put_picture(:thumb), class: "img-circle", id:"img-user-index" %>
-              </div>
-            <% end %>
-            <div id="title-card">
-            </div>
-          </div>
-        <% end %>
-    </div>
-    <div class="col-xs-12 col-lg-5 hidden-xs hidden-sm visible-md-* visible-lg-*" id="map-container">
-      <div id="map" style="width: 100%; height: 500px;"></div>
-    </div>
+  <div class="row espaceslist">
+
+        <%= render 'espaceslist' %>
+
+
   </div>
 </div>
 
@@ -41,7 +24,8 @@
 <% content_for(:after_js) do %>
 
   <%= javascript_tag do %>
-    $(document).on('ready', function() {
+
+    console.log('ca marche')
       var mapOptions = {
         disableDefaultUI: true
       }
@@ -55,11 +39,9 @@
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
           <% if @nb_results == 1 %>
-          console.log('hello')
           handler.getMap().setZoom(14)
           <% end %>
-
         });
-    })
+
   <% end %>
 <% end %>

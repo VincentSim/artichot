@@ -11,9 +11,9 @@ class EspacesController < ApplicationController
     @address = params[:user_input_autocomplete_address] || params[:nav_user_input_autocomplete_address]
     @nb_results = Espace.near(@address, 10).size
     if @nb_results == 0
-      @espaces = Espace.all
+      @espaces = Espace.all.page(params[:page]).per(10)
     else
-      @espaces = Espace.near(@address, 10)
+      @espaces = Espace.near(@address, 10).page(params[:page]).per(10)
     end
     p "=== debug ===="
     p @nb_results
@@ -23,6 +23,10 @@ class EspacesController < ApplicationController
     @markers = Gmaps4rails.build_markers(@espaces) do |espace, marker|
       p marker.lat espace.latitude
       p marker.lng espace.longitude
+    end
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
