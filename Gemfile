@@ -32,6 +32,9 @@ gem 'devise-i18n-views'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Active-admin
+gem 'activeadmin', github: 'activeadmin'
+
 # kaminari pagination
 gem 'kaminari'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

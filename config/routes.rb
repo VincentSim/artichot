@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   scope '(:locale)', locale: /fr|en/ do
     resources :espaces
     devise_for :users
