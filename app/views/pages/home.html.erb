@@ -7,7 +7,7 @@
     <button type="submit" id="see-more" class="btn btn-default see-more"><%= t('.how')%></button>
     <div class="how-it-works hidden">
       <div class="image-schema">
-        <%= image_tag("how_it_works.png",  class: "img-responsive")%>
+        <%= image_tag("how_it_works2.png",  class: "img-responsive")%>
       </div>
     </div>
   </div>
@@ -45,7 +45,9 @@
         $('.how-it-works').addClass('hidden');
         $('.banner').addClass('little');
       }else{
-      $('.how-it-works').removeClass('hidden');
+        $(".how-it-works").fadeIn("slow", function() {
+          $('.how-it-works').removeClass('hidden');
+        });
       $('.banner').removeClass('little')
     }
     });
