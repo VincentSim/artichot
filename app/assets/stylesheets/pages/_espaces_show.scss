@@ -91,6 +91,14 @@
       .title-card{
         text-transform: uppercase;
       }
+      .explanations{
+        text-align: center;
+        h2{
+          margin-top: 5px;
+          font-size: 25px;
+          word-wrap: break-word;
+        }
+      }
       .description{
         word-wrap: break-word;
         white-space: pre-line;
@@ -101,19 +109,13 @@
           margin: auto;
         }
       }
-       .carousel-indicators {
-          top: 10px;
-        }
         .carousel-indicators li{
           cursor: default;
         }
       .carousel-inner{
+        background-color: black;
         img{
           margin:auto;
-        }
-        .carousel-caption{
-          top: 10px;
-          word-wrap: break-word;
         }
       }
       .like-div{
