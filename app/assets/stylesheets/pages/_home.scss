@@ -10,6 +10,7 @@
   .banner{
     background-image:url(home.JPG);
     background-size: cover;
+    background-position:center;
     height: 800px;
     position: relative;
     z-index: 0;
@@ -17,6 +18,8 @@
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
+
+
   }
   .little{
     height:500px;
