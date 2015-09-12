@@ -12,10 +12,10 @@ fr:
       sign_up: "Inscription"
       sign_in: "Connexion"
     search:
-      search: "go"
+      search: "Go"
       input: "Rentrez votre adresse"
     search_nav:
-      search: "go"
+      search: "Go"
       input: "Rentrez votre adresse"
   pages:
       home:

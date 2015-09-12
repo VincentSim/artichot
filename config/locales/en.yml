@@ -34,10 +34,10 @@ en:
       sign_up: "Sign up"
       sign_in: "Log in"
     search:
-      search: "go"
+      search: "Go"
       input: "Start typing your address..."
     search_nav:
-      search: "go"
+      search: "Go"
       input: "Start typing your address..."
   pages:
     home:
