@@ -17,6 +17,8 @@ fr:
     search_nav:
       search: "Go"
       input: "Rentrez votre adresse"
+    footer:
+      contact: "Contactez-nous "
   pages:
       home:
         moto: "Des artistes à portée de main"

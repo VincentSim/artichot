@@ -39,6 +39,8 @@ en:
     search_nav:
       search: "Go"
       input: "Start typing your address..."
+    footer:
+      contact: "Contact-us at "
   pages:
     home:
       moto: "Meet the Artists"
