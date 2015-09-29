@@ -104,7 +104,7 @@
           <li>
             <% if current_user.espaces.size == 0 %>
               <%= link_to(new_espace_path, class: "btn") do %>
-                <%= t('.Create_espace')%>
+                <%= t('.create_espace')%>
               <% end %>
             <% else %>
               <%= link_to(espace_path(current_user.espaces.first), class: "btn") do %>
