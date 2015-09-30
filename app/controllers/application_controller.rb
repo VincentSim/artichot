@@ -23,6 +23,8 @@ class ApplicationController < ActionController::Base
   def set_locale
     if extract_locale_from_tld
       I18n.locale = extract_locale_from_tld
+    elsif I18n.locale == :fr && params[:locale] == nil
+      I18n.locale = :fr
     else
       I18n.locale = params[:locale] || I18n.default_locale
     end

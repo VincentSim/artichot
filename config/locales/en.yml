@@ -46,6 +46,7 @@ en:
       moto: "Meet the Artists"
       how: "How it works?"
       moto_suggestions: "Discover one of these Artists"
+
   espaces:
     form:
       select_espace_pic: "Select your Espace picture"
@@ -83,6 +84,9 @@ en:
       like: "You liked the Art piece %{title} posted on %{date} by"
   devise:
     registrations:
+      new:
+        first_name: "First name"
+        last_name: "Last name"
       edit:
         settings: "Settings"
         first_name: "First name"
@@ -106,6 +110,20 @@ en:
         address: "Address"
         category: "Category"
         picture: "Picture"
+        architecture: "architecture"
+        craftwork: "craftwork"
+        ceramic: "ceramic"
+        design: "design"
+        woodwork: "woodwork"
+        metalwork: "metalwork"
+        engraving: "engraving"
+        new_materials: "new materials"
+        new_media: "new media"
+        painting: "painting"
+        photography: "photography"
+        sculpture: "sculpture"
+        glasswork: "glasswork"
+        video: "video"
       art_piece:
         title: "Title"
         picture: "Picture"

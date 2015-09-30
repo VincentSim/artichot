@@ -27,7 +27,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <div id="category"><%= @espace.category %></div>
+          <div id="category"><%= t("activerecord.attributes.espace.#{@espace.category}") %></div>
           <% if current_user == @espace.user %>
             <%= link_to(edit_espace_path(@espace), class: 'edit_my_espace')   do %>
               <%= t('.edit_my_espace') %>

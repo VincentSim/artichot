@@ -21,9 +21,10 @@ fr:
       contact: "Contactez-nous "
   pages:
       home:
-        moto: "Des artistes à portée de main"
-        how: "mode d'emploi"
+        moto: "A la rencontre des Artistes"
+        how: "Mode d'emploi"
         moto_suggestions: "Découvrez l'un de ces Artistes"
+
   espaces:
     form:
       select_espace_pic: "Choisissez la photo de votre Espace"
@@ -66,6 +67,9 @@ fr:
       new:
         send_me_reset_password_instructions: "ré-initialiser mon mot de passe"
     registrations:
+      new:
+        first_name: "Prénom"
+        last_name: "Nom"
       edit:
         settings: "Paramètres"
         first_name: "Prénom"
@@ -89,6 +93,21 @@ fr:
         address: "Addresse"
         category: "Categorie"
         picture: "Photo"
+        architecture: "architecture"
+        craftwork: "artisanat"
+        ceramic: "céramique"
+        design: "design"
+        woodwork: "ébénisterie"
+        metalwork: "ferronnerie"
+        engraving: "gravures"
+        new_materials: "nouveaux matériaux"
+        new_media: "nouveaux médias"
+        painting: "peinture"
+        photography: "photographie"
+        sculpture: "sculpture"
+        glasswork: "verrerie"
+        video: "vidéo"
+
       art_piece:
         title: "Titre"
         picture: "Photo"

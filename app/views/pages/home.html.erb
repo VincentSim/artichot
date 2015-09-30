@@ -27,7 +27,7 @@
                 <h2 class="content-display"><%= espace.name %></h2>
                 <p class="content-display"><%= espace.address.truncate(35) %></p>
                 <div id="espace-category">
-                  <%= espace.category %>
+                  <%= t("activerecord.attributes.espace.#{espace.category}") %>
                </div>
               </div>
             <% end %>
