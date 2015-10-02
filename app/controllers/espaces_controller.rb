@@ -7,7 +7,7 @@ class EspacesController < ApplicationController
   respond_to :html
 
   def index
-    # params
+
     @address = params[:user_input_autocomplete_address] || params[:nav_user_input_autocomplete_address]
     @nb_results = Espace.near(@address, 10).size
     if @nb_results == 0
