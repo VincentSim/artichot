@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    binding.pry
+
     if extract_locale_from_tld && params[:locale] == 'en'
       I18n.locale = :en
     elsif extract_locale_from_tld
