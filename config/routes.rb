@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
-  scope '(:locale)', locale: /fr|en/ do
     resources :espaces
     devise_for :users
     resources :art_pieces, only: [:create, :destroy, :show] do
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
     end
     resources :users, only: [:show]
     resources :profiles, only: [:show]
-  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
