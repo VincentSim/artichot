@@ -7,7 +7,7 @@
     <button type="submit" id="see-more" class="btn btn-default see-more"><%= t('.how')%></button>
     <div class="how-it-works hidden">
       <div class="image-schema">
-        <%= image_tag("Artichot_schéma.png",  class: "img-responsive")%>
+        <%= I18n.locale == :en ? image_tag("Artichot_schéma.png",  class: "img-responsive") : image_tag("Artichot_Schema_FR.png",  class: "img-responsive")%>
       </div>
     </div>
   </div>
